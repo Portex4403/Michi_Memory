@@ -1,0 +1,60 @@
+body{
+    background-color: rgb(183, 183, 184);
+    margin: 0;
+    z-index: 0;
+}
+.ueberschrift{
+    display: flex;
+    justify-content: center;
+}
+.hintergrund{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.spielfeld{
+    width: fit-content;
+    background-color: rgb(255, 255, 255);
+    border: black solid  1px;
+}
+.kartenReihe{
+    display: flex;
+    gap: 1.5em;
+    margin: 1.0em;
+}
+.karte{
+    position: relative;
+    width: 6em;
+    height: 6em;
+}
+.hintergrundBild{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+.kartenPlatz{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+    backface-visibility: hidden;
+}
+.karte.gedreht{
+    animation: flipCardback 1s forwards;
+}
+.karte.verdeckt{
+    animation: flipCard 1s forwards;
+}
+
+@keyframes flipCard{
+    0%{ transform: rotateY(0deg);}
+    100%{ transform: rotateY(90deg);}
+    
+}
+
+@keyframes flipCardback{
+    0%{ transform: rotateY(90deg);}
+    100%{ transform: rotateY(0deg);}
+    
+}
